@@ -21,7 +21,7 @@ def before_first_request():
 def index():
     return render_template('input.html')
 
-def caption_gen(img_path):
+def caption_gen(img_path): #text-generation
     raw_image = Image.open(img_path).convert('RGB')
     inputs = processor(raw_image, return_tensors="pt")
     out = model.generate(**inputs)
@@ -29,7 +29,7 @@ def caption_gen(img_path):
 
 @app.route('/generate', methods=['POST'])
 
-def generate_captions():
+def generate_captions(): #image-to-text
     image_path = request.files['image_file']
     image_description = caption_gen(image_path)
     num_captions = int(request.form['num_captions'])
