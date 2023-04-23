@@ -1,0 +1,14 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Instagram Caption Generator</title>
+  </head>
+  <body style="background-color:SlateBlue;">
+    <h1>Generated Captions</h1>
+    <ul>
+      {% for caption in captions %}
+        <li>{{ caption }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

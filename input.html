@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Instagram Caption Generator</title>
+  </head>
+  <body style="background-color:SlateBlue;">
+    <h1>Instagram Caption Generator</h1>
+    <form action="{{ url_for('generate_captions') }}" method="POST" enctype="multipart/form-data">
+      <label for="num_captions">Number of Captions:</label><br>
+      <input type="number" id="num_captions" name="num_captions" min="1" max="10" value="1"><br><br>
+      <label for="image_file">Upload Image:</label><br>
+      <input type="file" id="image_file" name="image_file"><br><br>
+      <input type="submit" value="Generate Captions">
+    </form>
+  </body>
+</html>
