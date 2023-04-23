@@ -1,10 +1,38 @@
 <!doctype html>
 <html>
-  <head>
-    <title>Instagram Caption Generator</title>
-  </head>
+  <h1>Caption Generator</h1>
   <body style="background-color:SlateBlue;">
-    <h1>Generated Captions</h1>
+    <head>
+      <title>Image Description</title>
+      <style>
+        img {
+            max-width: 250px;
+            max-height: 250px;
+        }
+        .image-container {
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2{
+          text-align: center;
+        }
+        .output-container {
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img src="data:image/jpeg;base64,{{ image_base64 }}" alt="Uploaded Image">
+    </div>
+      <div class="output-container">
+          {{ output }}
+      </div>
+  </body>
+  </html>
+    <h2>Generated Captions</h2>
     <ul>
       {% for caption in captions %}
         <li>{{ caption }}</li>
